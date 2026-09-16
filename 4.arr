@@ -8,8 +8,8 @@ end
 fun three-layer-cake(top, middle, bottom:: String) -> Image:
   doc: "creates a cake with layers of different flavors"
   frame(
-    above(rectangle(120, 30, "solid", top),
-      above(rectangle(120, 30, "solid", middle),
+    above(rectangle(40, 30, "solid", top),
+      above(rectangle(80, 30, "solid", middle),
         rectangle(120, 30, "solid", bottom))))
 end
 
