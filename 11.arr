@@ -19,3 +19,21 @@ where:
   blank-to-CA("blah") is "blah"
 end
 voters-with-CA = transform-column(voter-data, "State", blank-to-CA)
+
+fun normalize-pn(s:: String) -> String:
+  doc: "puts phone numbers in format XXXXXXXXXX"
+  string-replace(
+    string-replace(
+    string-replace(
+    string-replace(
+    string-replace(s, "(", ""),
+      ")", ""),
+      " ", ""),
+      "-", ""),
+    ".", "")
+where:
+  normalize-pn("555.987.6543") is "5559876543"
+  normalize-pn("555-000-111") is "555000111"
+end
+
+voters-with-npn = transform-column(voters-with-CA, "Phone", normalize-pn)
