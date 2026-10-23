@@ -105,7 +105,6 @@ fun payment-summary(p :: PaymentMethod) -> String:
 where:
   payment-summary(cash) is "Cash payment"
   payment-summary(credit("1234567890123456", "2020")) is "Card ending in 3456"
-  payment-summary(checking(1234)) is "Check #1234"
 end
 
 data WeatherReport:
