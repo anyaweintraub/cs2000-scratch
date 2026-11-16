@@ -1,3 +1,4 @@
+#level intermediate
 def sum_list(num_list: list[float]) -> float:
     """Returns the sum of all numbers in the list."""
     run_total = 0
